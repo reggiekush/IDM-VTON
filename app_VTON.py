@@ -420,4 +420,4 @@ with image_blocks as demo:
         api_name='tryon'
     )
 
-image_blocks.launch(inbrowser=True, share=args.share)
+image_blocks.launch(inbrowser=True, share=args.share, "0.0.0.0")
