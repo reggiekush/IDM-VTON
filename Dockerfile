@@ -58,7 +58,7 @@ RUN /workspace/IDM-VTON/venv/bin/pip install --no-cache-dir \
 ENV PYTHONWARNINGS=ignore
 ENV HF_HUB_ENABLE_HF_TRANSFER=1
 
-EXPOSE 7860
+EXPOSE 7812
 
 # Use absolute paths at runtime as well
 CMD ["/bin/bash", "-c", "/workspace/IDM-VTON/venv/bin/python app_VTON.py"]
