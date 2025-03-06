@@ -19,14 +19,17 @@ RUN add-apt-repository -y ppa:deadsnakes/ppa && \
 
 RUN git lfs install
 
-# Clone IDM-VTON
-RUN git clone https://github.com/FurkanGozukara/IDM-VTON /workspace/IDM-VTON
+# Create /workspace/IDM-VTON and set it as the working directory
+RUN mkdir -p /workspace/IDM-VTON
 WORKDIR /workspace/IDM-VTON
+
+# Copy everything from your current directory (on your host) into /workspace/IDM-VTON in the image
+COPY . /workspace/IDM-VTON
 
 # Create virtual environment
 RUN python3.11 -m venv /workspace/IDM-VTON/venv
 
-# Upgrade pip in venv
+# Upgrade pip
 RUN /workspace/IDM-VTON/venv/bin/pip install --upgrade pip
 
 # Install requests and tqdm
